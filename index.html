@@ -323,6 +323,41 @@
   .mbody p{margin-bottom:8px}
   .mbody p:last-child{margin-bottom:0}
   .mbody b{color:#26221C}
+  .vsec{font-size:10px;font-weight:900;letter-spacing:1.5px;color:#9A9186;margin:4px 0 8px}
+  .vsec:first-child{margin-top:0}
+  .vitem{display:flex;align-items:center;gap:9px;border:1.5px solid #EDE6DA;border-radius:10px;padding:8px 10px;margin-bottom:8px;background:#fff}
+  .vitem:last-child{margin-bottom:0}
+  .vmain{flex:1;min-width:0}
+  .vline{font-size:12px;font-weight:800;color:#26221C}
+  .vsub{font-size:10px;font-weight:700;color:#A79E90;margin-top:2px;line-height:1.5}
+  .vempty{font-size:11px;font-weight:700;color:#B4AA9C;text-align:center;padding:8px 0}
+  .vfeeltag{font-size:10px;font-weight:900;padding:1px 6px;border-radius:6px;background:#F3EEE4;color:#7A7060;white-space:nowrap}
+  .vdel{flex-shrink:0;width:24px;height:24px;display:flex;align-items:center;justify-content:center;
+        border:1.5px solid #DDD5C8;border-radius:7px;background:#fff;color:#9A9186;font-size:11px;font-weight:900;
+        cursor:pointer;padding:0;line-height:1}
+  .vdel:active{transform:translate(1px,1px)}
+  .pcard{padding:12px 15px 14px}
+  .phead{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding:2px 0 10px;border-bottom:2px solid #26221C;margin-bottom:6px}
+  .phead b{font-size:13px;font-weight:900;color:#26221C}
+  .phead span{font-size:9.5px;font-weight:700;color:#A79E90}
+  .pregion{border:2px solid #EDE6DA;border-radius:12px;margin-bottom:10px;overflow:hidden;background:#FFFDF7}
+  .pregion-head{display:flex;align-items:center;gap:8px;padding:11px 13px;cursor:pointer;user-select:none}
+  .pregion-head:active{background:#F7F0E4}
+  .pregion-title{flex:1;min-width:0}
+  .pregion-name{font-size:14px;font-weight:900;color:#26221C}
+  .pregion-meta{font-size:9.5px;font-weight:700;color:#A79E90;margin-top:2px}
+  .pregion-arrow{font-size:11px;font-weight:900;color:#9A9186;transition:transform .2s}
+  .pregion.open .pregion-arrow{transform:rotate(180deg)}
+  .pregion-body{display:none;padding:0 13px 12px}
+  .pregion.open .pregion-body{display:block}
+  .prow{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1.5px dashed #EDE6DA}
+  .prow:last-child{border-bottom:none}
+  .pmain{flex:1;min-width:0}
+  .pk{font-size:12.5px;font-weight:800;color:#26221C}
+  .pn{font-size:9.5px;font-weight:700;color:#A79E90}
+  .prange{font-size:9.5px;font-weight:700;color:#B4AA9C;margin-top:2px}
+  .pp{font-size:16px;font-weight:900;color:#26221C;white-space:nowrap}
+  .pu{font-size:10px;font-weight:800;color:#9A9186;margin-left:1px}
   .modebtns{display:flex;gap:8px}
   .modebtn{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:14px 8px;border-radius:12px;
            cursor:pointer;font-family:inherit;border:2px solid}
@@ -502,6 +537,25 @@
   body.dark .camhint{color:#CFC7B8}
   body.dark .feelbtn{background:#1F1B15;border-color:#3A342B;color:#CFC7B8}
   body.dark .feelbtn.on{background:#2A251D;border-color:#EAE3D5;color:#EAE3D5;box-shadow:2px 2px 0 #000}
+  body.dark .vitem{background:#2A251D;border-color:#3A342B}
+  body.dark .vline{color:#EAE3D5}
+  body.dark .vsub{color:#A79E90}
+  body.dark .vfeeltag{background:#1F1B15;color:#CFC7B8}
+  body.dark .vempty{color:#7A7060}
+  body.dark .vdel{background:#1F1B15;border-color:#3A342B;color:#A79E90}
+  body.dark .prow{border-bottom-color:#3A342B}
+  body.dark .pk{color:#EAE3D5}
+  body.dark .pn{color:#A79E90}
+  body.dark .prange{color:#8A8073}
+  body.dark .pp{color:#EAE3D5}
+  body.dark .pu{color:#A79E90}
+  body.dark .phead{border-bottom-color:#4A4438}
+  body.dark .phead b{color:#EAE3D5}
+  body.dark .pregion{background:#2C251D;border-color:#3A342B}
+  body.dark .pregion-head:active{background:#332B21}
+  body.dark .pregion-name{color:#EAE3D5}
+  body.dark .pregion-meta{color:#A79E90}
+  body.dark .pregion-arrow{color:#8A8073}
   body.dark #unote{background:#1F1B15;border-color:#3A342B;color:#EAE3D5}
   body.dark .searchbox input::placeholder{color:#8A8073}
   body.dark #price::placeholder{color:#8A8073}
@@ -842,14 +896,15 @@
         <div class="stitle">数 据</div>
         <div class="srow">
           <div class="sinfo">
-            <div class="sk">当前数据</div>
-            <div class="sd">演示用示例数据 · 本地估算</div>
+            <div class="sk">数据来源</div>
+            <div class="sd">6 城批发参考价 · 农业农村部信息中心</div>
           </div>
-          <span class="stag">演示</span>
+          <span class="stag">批发</span>
         </div>
         <button class="sbtn" id="setClearBill">清空历史记录</button>
         <button class="sbtn danger" id="setClearCats">清空自定义品类</button>
         <button class="sbtn danger" id="setClearAll">清空全部数据</button>
+        <button class="sbtn" id="setViewData">查看保存数据</button>
 
         <div class="stitle">关 于</div>
         <div class="srow">
@@ -859,6 +914,17 @@
           </div>
         </div>
         <div class="sabout">贵不贵不是绝对值，是分位数。<br>当前价格为演示用示例数据；定位只用于选择城市，不会上传你的精确位置。</div>
+      </div>
+    </div>
+
+    <div id="v-price" class="hide">
+      <div class="brandbar">
+        <div class="logo">真实价格<b></b></div>
+        <div class="bsub" id="pdataSub"></div>
+      </div>
+      <div class="card pcard">
+        <div class="phead" id="pdataHead"></div>
+        <div id="pdataList"></div>
       </div>
     </div>
   </div>
@@ -873,6 +939,7 @@
     <div class="tab on" data-t="judge"><span class="ti">◎</span><span id="tabLabel">判 断</span></div>
     <div class="tab" data-t="bill" id="tabBill"><span class="ti">▤</span>历 史</div>
     <div class="tab" data-t="set"><span class="ti">⚙</span>设 置</div>
+    <div class="tab" data-t="price"><span class="ti">▦</span>数 据</div>
   </div>
   <div class="toast" id="toast">定位中…</div>
 </div>
@@ -938,6 +1005,13 @@
   </div>
 </div>
 
+<div class="modal hide" id="viewDataModal" role="dialog" aria-modal="true" aria-label="保存的数据">
+  <div class="modalbox mwide">
+    <div class="mhead"><span>保存的数据</span><span class="mclose" id="viewDataClose">✕</span></div>
+    <div class="mbody vdata" id="viewDataBody"></div>
+  </div>
+</div>
+
 <div class="modal hide" id="camModal" role="dialog" aria-modal="true" aria-label="拍照识菜">
   <div class="modalbox msmall">
     <div class="mhead"><span>拍照识菜</span><span class="mclose" id="camClose">✕</span></div>
@@ -958,6 +1032,7 @@
 
 <script src="cats.js"></script>
 <script src="geo.js"></script>
+<script src="prices.js"></script>
 <script>
 let CATS=MMCats.all();
 const CHANS=[{name:'菜市场',mult:1.00},{name:'水果店',mult:1.18},{name:'超市',mult:1.10},{name:'景区',mult:1.65}];
@@ -1347,8 +1422,15 @@ function judge(save){
   }).join('');
   $('#wbsave').textContent=r2(chPrices[chPrices.length-1].price-chPrices[0].price);
   const bestCh=chPrices[0].name;
-  $('#wbmaps').href='https://uri.amap.com/search?keyword='+encodeURIComponent(bestCh+' '+c.k)+'&city='+encodeURIComponent(rg.n);
-  $('#wbmaps').textContent='🗺 在地图找「'+bestCh+'」';
+  const gl=geo.current?geo.current():null;
+  let center=null;
+  if(gl && gl.lng!=null && gl.lat!=null){ center=gl.lng+','+gl.lat; }
+  else{ const cc=MMGeo.CITIES[+$('#region').value]; if(cc) center=cc.lng+','+cc.lat; }
+  $('#wbmaps').href='https://uri.amap.com/search?keyword='+encodeURIComponent(bestCh+' '+c.k)
+    +(center?'&center='+encodeURIComponent(center):'')
+    +'&city='+encodeURIComponent(rg.n)
+    +'&view=map&src=mingma&callnative=1';
+  $('#wbmaps').textContent=(gl&&gl.lat!=null?'🗺 在我附近找「'+bestCh+'」':'🗺 在地图找「'+bestCh+'」');
   $('#res').classList.remove('hide');
 
   setVerdict(pc, tag.replace(/\s/g,''), r2(p50), q>=.75?'#E4513C':(q<.25?'#2E7BD6':'#3F8C4E'));
@@ -1427,6 +1509,7 @@ function selectTab(t){
   $('#v-sell').classList.toggle('hide', v!=='judge' || mode==='buyer');
   $('#v-bill').classList.toggle('hide',v!=='bill');
   $('#v-set').classList.toggle('hide',v!=='set');
+  $('#v-price').classList.toggle('hide',v!=='price');
   showVerdict(v==='judge' && mode==='buyer' && !$('#res').classList.contains('hide'));
   $('#scroll').scrollTop=0;
 }
@@ -1655,7 +1738,7 @@ $('#shareSave').addEventListener('click',saveCard);
 $('#shareClose').addEventListener('click',closeShare);
 $('#shareClose2').addEventListener('click',closeShare);
 $('#shareModal').addEventListener('click',e=>{ if(e.target===e.currentTarget) closeShare(); });
-document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeShare(); closeTip(); closeUpload(); closeCam(); } });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeShare(); closeTip(); closeUpload(); closeCam(); closeViewData(); } });
 let feelChoice='正常';
 function closeUpload(){ $('#uploadModal').classList.add('hide'); }
 function setFeel(v){
@@ -1676,11 +1759,113 @@ $('#uploadCancel').addEventListener('click',closeUpload);
 $('#uploadModal').addEventListener('click',e=>{ if(e.target===e.currentTarget) closeUpload(); });
 $('#uploadSend').addEventListener('click',()=>{
   const c=CATS[ci], ch=CHANS[+$('#chan').value], rg=REGIONS[+$('#region').value];
-  const rec={cat:c.k, city:rg.n, chan:ch.name, price:parseFloat($('#price').value), pct:$('#pct').textContent, feel:feelChoice, note:$('#unote').value.trim(), t:Date.now()};
+  const rec={cat:c.k, city:rg.n, chan:ch.name, price:parseFloat($('#price').value)||0, pct:parseInt($('#pct').textContent,10)||0, feel:feelChoice, note:$('#unote').value.trim(), t:Date.now()};
   try{ const list=JSON.parse(localStorage.getItem('mm_feedback_v1')||'[]'); list.push(rec); localStorage.setItem('mm_feedback_v1', JSON.stringify(list)); }catch(e){}
   closeUpload();
-  toast('已上传 · 感谢反馈，将用于优化价格库');
+  toast('正在上传…');
+  mmUpload(rec).then(()=>{
+    toast('已上传 · 已同步到云端价格库');
+  }).catch(()=>{
+    toast('已存到本地 · 云端同步失败');
+  });
 });
+
+/* ---- 云端价格库（TiDB Data App，演示用，密钥仅用于黑客松 demo） ---- */
+const MM_DB={
+  url:'https://ap-northeast-1.data.tidbcloud.com/api/v1beta/app/dataapp-qfCgliqz/endpoint/system/query',
+  auth:'Basic TzNJR0FEUjA6YzMyMmMzZmUtMDAxNi00YjU2LWI4MzYtNjUyMDkwNzE2ODZi'
+};
+function mmEsc(s){ return String(s==null?'':s).replace(/\\/g,'\\\\').replace(/'/g,"''"); }
+function mmUpload(rec){
+  const sql="INSERT INTO test.mm_feedback (cat,city,chan,price,pct,feel,note,ts) VALUES ("+
+    "'"+mmEsc(rec.cat)+"','"+mmEsc(rec.city)+"','"+mmEsc(rec.chan)+"',"+
+    (Number(rec.price)||0)+","+(Number(rec.pct)||0)+","+
+    "'"+mmEsc(rec.feel)+"','"+mmEsc(rec.note)+"',"+Number(rec.t)+")";
+  return fetch(MM_DB.url,{method:'POST',headers:{'Authorization':MM_DB.auth,'Content-Type':'application/json'},body:JSON.stringify({sql})})
+    .then(r=>{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+    .then(j=>{ const m=j&&j.data&&j.data.result; if(m&&m.code&&m.code!==200) throw new Error(m.message||('code '+m.code)); return j; });
+}
+function mmDelete(rec){
+  const sql="DELETE FROM test.mm_feedback WHERE ts="+Number(rec.t)+" AND cat='"+mmEsc(rec.cat)+"' AND city='"+mmEsc(rec.city)+"' AND chan='"+mmEsc(rec.chan)+"'";
+  return fetch(MM_DB.url,{method:'POST',headers:{'Authorization':MM_DB.auth,'Content-Type':'application/json'},body:JSON.stringify({sql})})
+    .then(r=>r.json()).catch(()=>{});
+}
+
+/* ---- 查看保存的数据 ---- */
+function loadFeedback(){ try{ const r=JSON.parse(localStorage.getItem('mm_feedback_v1')||'[]'); return Array.isArray(r)?r:[]; }catch(e){ return []; } }
+function renderViewData(){
+  const fb=loadFeedback();
+  const feelEmoji={偏贵:'😖',正常:'😐',划算:'😄'};
+  let h='<div class="vsec">上传反馈 · '+fb.length+' 条</div>';
+  if(fb.length){
+    h+=fb.map((r,i)=>{
+      const t=r.t?fmtTime(r.t):'';
+      return '<div class="vitem">'+
+        '<div class="vmain">'+
+          '<div class="vline">'+esc(r.cat)+' · ¥'+esc(r2(r.price))+'/斤 <span class="vfeeltag">'+(feelEmoji[r.feel]||'')+' '+esc(r.feel)+'</span></div>'+
+          '<div class="vsub">'+esc(r.city)+' · '+esc(r.chan)+' · 第'+esc(r.pct)+'分位'+(r.note?' · '+esc(r.note):'')+(t?' · '+t:'')+'</div>'+
+        '</div>'+
+        '<button class="vdel" data-i="'+i+'" title="删除">✕</button>'+
+      '</div>';
+    }).reverse().join('');
+  }else{
+    h+='<div class="vempty">还没有上传过数据</div>';
+  }
+  $('#viewDataBody').innerHTML=h;
+}
+function openViewData(){ renderViewData(); $('#viewDataModal').classList.remove('hide'); }
+function closeViewData(){ $('#viewDataModal').classList.add('hide'); }
+$('#setViewData').addEventListener('click',openViewData);
+$('#viewDataClose').addEventListener('click',closeViewData);
+$('#viewDataModal').addEventListener('click',e=>{ if(e.target===e.currentTarget) closeViewData(); });
+$('#viewDataBody').addEventListener('click',e=>{
+  const btn=e.target.closest('.vdel');
+  if(!btn) return;
+  const i=parseInt(btn.getAttribute('data-i'),10);
+  const fb=loadFeedback();
+  if(!fb[i]) return;
+  const rec=fb[i];
+  fb.splice(i,1);
+  try{ localStorage.setItem('mm_feedback_v1', JSON.stringify(fb)); }catch(err){}
+  mmDelete(rec);
+  renderViewData();
+});
+
+/* ---- 真实价格数据 ---- */
+function renderPriceView(){
+  const P=window.MMPRICES||{regions:[]};
+  const regions=(P.regions&&P.regions.length)?P.regions:[];
+  $('#pdataSub').textContent=regions.length+' 个城市 · 批发参考';
+  $('#pdataHead').innerHTML='<b>多地区批发价</b><span>元/斤 · '+esc(P.note||'')+'</span>';
+  const cats=['蔬菜','水果','肉蛋','水产'];
+  let h='';
+  regions.forEach(r=>{
+    const items=r.items||[];
+    h+='<div class="pregion'+(r.id==='beijing'?' open':'')+'" data-id="'+esc(r.id)+'">';
+    h+='<div class="pregion-head"><div class="pregion-title"><div class="pregion-name">'+esc(r.name)+' · '+esc(r.market)+'</div>';
+    h+='<div class="pregion-meta">'+esc(r.date)+' · '+items.length+' 条 · 点击展开/收起</div></div>';
+    h+='<span class="pregion-arrow">▼</span></div>';
+    h+='<div class="pregion-body">';
+    cats.forEach(cat=>{
+      const list=items.filter(x=>x.cat===cat);
+      if(!list.length) return;
+      h+='<div class="vsec">'+cat+' · '+list.length+' 种</div>';
+      h+=list.map(x=>'<div class="prow">'+
+        '<div class="pmain"><div class="pk">'+esc(x.k)+' <span class="pn">'+esc(x.n)+'</span></div>'+
+        (x.low!=null?'<div class="prange">低 ¥'+x.low+' · 高 ¥'+x.high+'</div>':'')+'</div>'+
+        '<div class="pp">¥'+x.avg+'<span class="pu">/斤</span></div></div>').join('');
+    });
+    h+='</div></div>';
+  });
+  $('#pdataList').innerHTML=h;
+}
+$('#pdataList').addEventListener('click',e=>{
+  const head=e.target.closest('.pregion-head');
+  if(!head) return;
+  head.parentElement.classList.toggle('open');
+});
+renderPriceView();
+
 /* ---- 拍照识菜 ---- */
 let camStream=null, camCaptured=false;
 function openCam(){

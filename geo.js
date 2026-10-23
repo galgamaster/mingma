@@ -286,7 +286,9 @@
       last = {
         name: res.name, idx: res.idx, distance: res.distance,
         source: source, confidence: res.confidence || 'high',
-        acc: res.acc || null, offGrid: !!res.offGrid
+        acc: res.acc || null, offGrid: !!res.offGrid,
+        lat: (res.lat != null) ? res.lat : null,
+        lng: (res.lng != null) ? res.lng : null
       };
 
       if (source === 'gps') {
